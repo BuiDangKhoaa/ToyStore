@@ -1,0 +1,109 @@
+﻿@using ToyStore.Models
+@model List<Category>
+    <style>
+        /*#div-u {
+            padding-top: 30px;
+            margin-top: 50px;
+            background-color: aquamarine;
+            text-decoration: none;
+           
+
+           
+        }
+        .div-cate{
+            height:30px;
+            width:100%;
+            scroll-padding:auto;
+            
+        }
+        a {
+            color: #a94442;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+        }
+        a:hover{
+            text-decoration:none;
+        }
+        ul#div-u {
+            display: flex;
+            height: 20px;
+            width: 1500px;
+        }
+
+        #div-u .div-cate a {
+            color: black;
+            padding-top: 0px;
+            color: black;
+            font-size: 20px;
+            border: 2px solid black;
+            padding-left: 50px;
+            padding-right: 50px;
+            background-color: antiquewhite;
+            border-radius: 10px;
+        }*/
+
+        /*.div-cate {*/
+        /* height: 12px; */
+        /*width: 100%;
+        }*/
+
+        /*#div-u {
+            margin-top: 20px;
+            lightcoral text-decoration: none;
+        }*/
+        #div-u {
+            padding-top: 3px;
+            display: flex;
+            background-color: antiquewhite;
+            text-decoration: none;
+            padding-bottom:10px;
+            /*margin-top: 5px;*/
+        }
+
+        .div-cate {
+            height: 30px;
+            width: 100%;
+        }
+
+        a {
+            color: #a94442;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+        }
+
+            a:hover {
+                text-decoration: none;
+            }
+        /*Them*/
+        ul#div-u {
+            height: 20px;
+            width: 1500px;
+        }
+
+        #div-u .div-cate a {
+            color: black;
+            padding-top: 0px;
+            color: black;
+            font-size: 20px;
+            border: 2px solid black;
+            padding-left: 50px;
+            padding-right: 50px;
+            background-color: antiquewhite;
+            border-radius: 10px;
+        }
+
+
+    </style>
+<ul style="list-style-type:none;"id="div-u">
+    @{ 
+        foreach(var item in Model)
+            {
+                <li class="div-cate">
+                    @Html.ActionLink(item.NameCate,"Index","Product",new {category=item.IDCate.Trim()},"")
+                </li>
+                <hr />
+            }
+    }
+</ul>

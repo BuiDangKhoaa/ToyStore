@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ToyStore.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/ViewPage1.cshtml";
+}
+
+<h2>Danh sách các loại sản phẩm</h2>
+
+<p>
+    @Html.ActionLink("Tạo sản phẩm mới", "Create")
+</p>
+@using (Html.BeginForm("Index", "Categories", FormMethod.Get))
+{
+    <input type="text" name="_name" />
+    <input type="submit" value="Tìm kiếm" />
+}
+<table class="table table-bordered" style="border-width:thick">
+    <br />
+    <tr>
+        <th>
+            Mã loại sản phẩm
+        </th>
+        <th>
+            Tên loại sản phẩm
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDCate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameCate)
+            </td>
+            <td style="font-size:14px">
+                @Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

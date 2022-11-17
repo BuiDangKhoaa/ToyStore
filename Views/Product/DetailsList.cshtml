@@ -1,0 +1,106 @@
+﻿@model ToyStore.Models.Product
+
+@{
+    ViewBag.Title = "DetailsList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .dl-horizontal {
+        margin-left: 400px;
+    }
+
+    .form-control {
+        width: 30%;
+    }
+</style>
+<body>
+    <div id="contant">
+        <div id="div_top">
+            <h2 style="text-align: center; font-size: 50px; font-family: monospace "> @Html.DisplayFor(model => model.NamePro)</h2>
+        </div>
+
+
+        <div class="control-label col-md-6">
+            <img src="@Url.Content(Model.ImagePro)" height="500" width="500" />
+        </div>
+
+        <div class="control-label col-md-4">
+            @Html.DisplayFor(model => model.DecriptionPro)
+
+            <p style="font-size:50px ;font-family:cursive">  @Html.DisplayFor(model => model.Price)0 Vnd</p>
+            <a href="/ShoppingCart/AddToCart/@Model.ProductID" class="btn btn-default">Mua hàng</a>
+        </div>
+
+        <div>
+            <footer>
+                <p>
+                    @Html.ActionLink("Trở về", "Index")
+                </p>
+
+            </footer>
+
+        </div>
+    </div>
+
+
+
+</body>
+@*<h2>Chi tiết sản phẩm</h2>
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+              Tên sản phẩm
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NamePro)
+            </dd>
+
+            <dt>
+                Chi tiết
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DecriptionPro)
+            </dd>
+
+            <dt>
+                Loại sản phẩm
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category)
+            </dd>
+
+            <dt>
+                Giá
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                Hình ảnh
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImagePro)
+            </dd>
+
+            <dt>
+               Số lượng
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+
+        </dl>
+    </div>*@
+<p>
+    @Html.ActionLink("Quay về", "Index")
+</p>

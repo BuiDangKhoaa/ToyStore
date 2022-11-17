@@ -1,0 +1,57 @@
+﻿@model ToyStore.Models.OrderPro
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/ViewPage1.cshtml";
+}
+
+
+
+<h3>Bạn có chắc muốn xóa đơn hàng này chứ ?</h3>
+<div>
+    <h4>OrderPro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+        Thời gian đặt
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOrder)
+        </dd>
+
+        <dt>
+           Mã KH
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDCus)
+        </dd>
+
+        <dt>
+          Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressDeliverry)
+        </dd>
+
+        <dt>
+           Tên KH
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameCus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay về", "Index")
+        </div>
+    }
+</div>

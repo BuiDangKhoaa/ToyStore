@@ -1,0 +1,48 @@
+﻿@model ToyStore.Models.Product
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/ViewPage1.cshtml";
+}
+
+<h2>THÊM SẢN PHẨM MỚI</h2>
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table class="table-bordered">
+        <tr>
+            <td>@*@Html.LabelFor(model => model.NamePro)*@
+            Tên sản phẩm </td>
+            <td>@Html.EditorFor(model => model.NamePro)</td>
+        </tr>
+        <tr>
+            <td>Giá</td>
+            <td>@Html.EditorFor(model => model.Price)</td>
+        </tr>
+
+        <tr>
+            <td>Loại sản phẩm</td>
+            <td>
+                @*@{Html.RenderAction("SelectCate", "Product"); }*@
+                @*@{Html.RenderAction("action_name", "controller_name"); }*@
+                @Html.DropDownListFor(model => model.Category, (SelectList)ViewBag.listCategory)
+            </td>
+        </tr>
+        <tr>
+            <td>Chi tiết </td>
+            <td>@Html.EditorFor(model => model.DecriptionPro)</td>
+        </tr>
+        <tr>
+            <td>Hình ảnh</td>
+            <td>
+                <img src="@Url.Content(Model.ImagePro)" height="150" width="150" id="previewImg" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="file" name="UploadImage" onchange="ChangeImage(this, document.getElementById('previewImg'))" />
+                <input type="submit" value="Tạo mới" />
+            </td>
+        </tr>
+    </table>
+}
+

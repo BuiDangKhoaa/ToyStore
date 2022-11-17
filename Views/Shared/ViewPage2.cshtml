@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/script.js"></script>
+    <style>
+        #div-footer {
+            position: fixed;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            padding-top: 15px;
+            height: 50px;
+            width: 100%;
+            background-color: aquamarine;
+        }
+
+        li.format-hello {
+            padding-top: 15px;
+            color: crimson;
+        }
+
+        #animation-top5:hover {
+            color: white;
+            text-shadow: 1px 1px 2px gray,0 0 25px red,0 0 5px red;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: crimson;
+            font-size: 14px;
+        }
+
+        .navbar-inverse {
+            background-color: antiquewhite;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                @Html.ActionLink("Null Toy", "Index", "Product", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Product")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <span>
+                            <a href="/ShoppingCart/ShowCart">
+                                <img src="@Url.Content("~/Content/images/giohang.jpg")" style="height:30px;width:30px;margin-top:10px;" />
+                            </a>
+                        </span>
+                        @Html.Action("BagCart", "ShoppingCart")
+                    </li>
+                    <li> <a href="/LoginUser/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
+                    <li> <a href="/LoginUser/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
+                    <li> <a href="@Url.Action("LogOutUser", "LoginUser")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
+                    <li class="format-hello">
+                        @if (Session["NameUser"] == null)
+                        {
+                            <span>Xin chào quý khách !</span>
+                        }
+                        else
+                        {
+                            <span> <text>Xin Chào </text> @Session["NameUser"] !</span>
+                        }
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align:center;padding-top:10px;padding-bottom:10px">
+            @using (Html.BeginForm("Search", "Product"))
+            {
+
+                <input type="text" name="_name" style="width:500px" />
+                <input type="submit" value="Tìm kiếm" />
+
+            }
+        </div>
+        @{Html.RenderAction("CategoryPartial", "Categories"); }
+    </div>
+
+    <div class="container-fluid body-content"style="padding-top:5%">
+
+        <div style="text-align:center">
+           
+            <div class="col-md" id="div-content" style="border-radius: 10px">
+                @RenderBody()
+            </div>
+        </div>
+
+
+    </div>
+    <br />
+    <div class="col-md-">
+        <footer style="background-color: lightcoral; text-align:center;border-radius:10px">
+            <div class="footer-">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                <p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>
+                <p>Thông tin liên hệ: 0123456789 </p>
+                <p>Địa chỉ email: Huflit.edu.vn</p>
+            </div>
+
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
