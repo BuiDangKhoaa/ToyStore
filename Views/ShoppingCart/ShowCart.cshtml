@@ -26,7 +26,7 @@
             @foreach (var item in Model.Items)
             {
                 decimal total =item._quantity * (decimal)item._product.Price.Value;
-                <tr>
+                <tr style="text-align:left">
                     <td>@Html.DisplayFor(model => item._product.NamePro)</td>
                     <td><img src="@Url.Content(item._product.ImagePro)" height="50" width="50" /></td>
                     <td>@Html.DisplayFor(model => item._product.Price)</td>

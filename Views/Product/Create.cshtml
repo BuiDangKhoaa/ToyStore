@@ -8,7 +8,7 @@
 <h2>THÊM SẢN PHẨM MỚI</h2>
 @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <table class="table-bordered">
+    <table class="table-bordered" style="padding:10px">
         <tr>
             <td>@*@Html.LabelFor(model => model.NamePro)*@
             Tên sản phẩm </td>
@@ -26,6 +26,11 @@
                 @*@{Html.RenderAction("action_name", "controller_name"); }*@
                 @Html.DropDownListFor(model => model.Category, (SelectList)ViewBag.listCategory)
             </td>
+        </tr>
+
+            <tr>
+            <td>Số lượng </td>
+            <td>@Html.EditorFor(model => model.DecriptionPro)</td>
         </tr>
         <tr>
             <td>Chi tiết </td>

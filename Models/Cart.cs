@@ -43,9 +43,9 @@ namespace ToyStore.Models
             var item = items.Find(s => s._product.ProductID == id);
             if (item != null)
             {
-                if (items.Find(s => s._product.Quantity > _new_quan) != null)//nếu số lượng mua nhỏ hơn sô lượng tồn
+             //   if (items.Find(s => s._product.Quantity > _new_quan) != null)//nếu số lượng mua nhỏ hơn sô lượng tồn
                     item._quantity = _new_quan;//thì chấp nhận số lượng mua
-                else item._quantity = 1;//ngược lại thì số lượng mua trả về 1
+             //   else item._quantity = 1;//ngược lại thì số lượng mua trả về 1
             }
                 //item._quantity = _new_quan;
         }

@@ -9,6 +9,12 @@
     .field-validation-errror {
         color: red;
     }
+    th,td{
+        padding:5px;
+    }
+    h2{
+        padding-top:10px;
+    }
 </style>
 <h2>Đăng Nhập</h2>
 <div style="margin-left:40%">
@@ -16,8 +22,8 @@
     @using (Html.BeginForm("LoginAcount", "LoginUser"))
     {
         @Html.AntiForgeryToken()
-        <div style="margin-left: 40%; border: 1px solid black; margin: 10px; padding: 10px; border-radius: 10px; background-color: white; padding-bottom: 10px;width:300px">
-            <table>
+        <div style="margin-left: 40%; border: 1px solid black; margin: 10px; padding: 10px; border-radius: 10px; background-color: white; padding-bottom: 10px;width:fit-content">
+            <table style="border-spacing:10px">
                 <tr>
                     <td>Tài Khoản</td>
                     <td>@Html.TextBoxFor(model => model.NameUser, new { style = "field-validation-error" })</td>

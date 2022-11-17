@@ -304,6 +304,7 @@
     <Content Include="Views\OrderPro\Details.cshtml" />
     <Content Include="Views\OrderPro\Edit.cshtml" />
     <Content Include="Views\OrderPro\Delete.cshtml" />
+    <Content Include="Views\Product\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
