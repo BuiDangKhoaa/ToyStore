@@ -55,17 +55,23 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Product")</li>
+                    <li>@Html.ActionLink("Danh sách sản phẩm", "List", "Product")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                   
+
                     <li> <a href="/Admin/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
                     <li> <a href="/Admin/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
-                    <li> <a href="@Url.Action("LogOutUser", "Admin")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
-                   
-                </ul>
+                    
+                        @if (Session["NameUser"] != null)
+                        {
+                        <li> <a href="@Url.Action("LogOutUser", "Admin")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
+                         }
+                 
+                        
+
+                    </ul>
             </div>
         </div>
 

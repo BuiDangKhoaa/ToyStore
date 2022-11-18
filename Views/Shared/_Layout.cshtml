@@ -69,7 +69,6 @@
                     </li>
                     <li> <a href="/LoginUser/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
                     <li> <a href="/LoginUser/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
-                    <li> <a href="@Url.Action("LogOutUser", "LoginUser")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
                     <li class="format-hello">
                         @if (Session["NameUser"] == null)
                         {
@@ -77,10 +76,12 @@
                         }
                         else
                         {
-                            <span> <text>Xin Chào </text> @Session["NameUser"] !</span>
-                        }
-                    </li>
-                </ul>
+                        <li> <a href="@Url.Action("LogOutUser", "LoginUser")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
+
+                        <li> <text>Xin Chào </text> @Session["NameUser"] !</li>
+                    }
+                        </li>
+                    </ul>
             </div>
         </div>
         <div style="text-align:center;padding-top:10px;padding-bottom:10px">
