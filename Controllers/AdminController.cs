@@ -62,7 +62,7 @@ namespace ToyStore.Controllers
         public ActionResult LogOutUser()
         {
             Session.Abandon();
-            return RedirectToAction("FormLogin", "LoginUser");
+            return RedirectToAction("FormLogin", "Admin");
         }
     }
 }

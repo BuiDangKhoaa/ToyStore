@@ -2,26 +2,27 @@
 
 @{
     ViewBag.Title = "RegisterUser";
-    Layout = "~/Views/Shared/User.cshtml";
+    Layout = "~/Views/Shared/Saler.cshtml";
 }
+
 
 <style>
     .field-validation-error {
         color: red;
-        
     }
+
     th, td {
         padding: 5px;
     }
+
     #table {
-     
-        margin-right:auto ;
+        margin-right: auto;
         margin-left: 35%;
-    }  
+    }
 </style>
 <h2>Đăng ký tài khoản</h2>
 <div id="table">
-    @using (Html.BeginForm("RegisterUser", "LoginUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("RegisterUser", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
         <div style=" border: 1px solid black; margin: 10px; padding: 10px; border-radius: 10px; background-color: white; padding-bottom: 10px;width:fit-content ">
@@ -32,7 +33,7 @@
                     <td> @Html.ValidationMessageFor(model => model.ID) </td>
 
                 </tr>
-               
+
                 @if (ViewBag.ErrorRegister != null)
                 {
                     @ViewBag.ErrorRegister
@@ -63,34 +64,7 @@
                     <td> <input type="submit" value="Đăng ký" /> </td>
                 </tr>
             </table>
-            </div>
-            }
         </div>
-
-        @*<p>@Html.LabelFor(model => model.ID)</p>
-            <p>@Html.EditorFor(model => model.ID)</p>
-            <p>
-                @Html.ValidationMessageFor(model => model.ID)
-            </p>
-            if (ViewBag.ErrorRegister != null)
-            {
-                <p>@ViewBag.ErrorRegister</p>
-            }
-            <p>@Html.LabelFor(model => model.NameUser)</p>
-            <p>@Html.EditorFor(model => model.NameUser)</p>
-            <p>@Html.ValidationMessageFor(model => model.NameUser)</p>
-
-            <p>@Html.LabelFor(model => model.RoleUser)</p>
-            <p>@Html.EditorFor(model => model.RoleUser)</p>
-            <p>@Html.ValidationMessageFor(model => model.RoleUser)</p>
-
-            <p>@Html.LabelFor(model => model.PasswordUser)</p>
-            <p>@Html.PasswordFor(model => model.PasswordUser)</p>
-            <p>@Html.ValidationMessageFor(model => model.PasswordUser)</p>
-
-            <p>@Html.LabelFor(model => model.ConfirmPass)</p>
-            <p>@Html.PasswordFor(model => model.ConfirmPass)</p>
-            <p>@Html.ValidationMessageFor(model => model.ConfirmPass)</p>
-
-            <input type="submit" value="Đăng ký" />*@
+    }
+</div>
 

@@ -144,6 +144,7 @@
     <Compile Include="Controllers\OrderProController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\VoucherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -285,14 +286,14 @@
     <Content Include="Views\Categories\CategoryPartial.cshtml" />
     <Content Include="Views\Product\SearchOption.cshtml" />
     <Content Include="Views\OrderDetail\GroupByTop5.cshtml" />
-    <Content Include="Views\Shared\ViewPage1.cshtml" />
+    <Content Include="Views\Shared\Saler.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Product\List.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Product\DetailsList.cshtml" />
-    <Content Include="Views\Shared\ViewPage2.cshtml" />
+    <Content Include="Views\Shared\User.cshtml" />
     <Content Include="Views\Admin\FormLogin.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
@@ -304,10 +305,11 @@
     <Content Include="Views\OrderPro\Details.cshtml" />
     <Content Include="Views\OrderPro\Edit.cshtml" />
     <Content Include="Views\OrderPro\Delete.cshtml" />
-    <Content Include="Views\Product\test.cshtml" />
+    <Content Include="Views\Admin\RegisterUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Voucher\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

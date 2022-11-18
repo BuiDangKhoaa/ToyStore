@@ -100,7 +100,7 @@ namespace ToyStore.Controllers
         {
             db.Entry(cate).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("List");
         }
         public ActionResult Delete(int id)
         {
@@ -130,6 +130,8 @@ namespace ToyStore.Controllers
                 return View(db.Products.Where(s => s.NamePro.Contains(_name)).ToList());
             //return View(db.Categories.ToList());
         }
+
+
 
     }
 

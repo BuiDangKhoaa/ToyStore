@@ -2,44 +2,53 @@
 
 @{
     ViewBag.Title = "FormLogin";
-    Layout = "~/Views/Shared/ViewPage2.cshtml";
+    Layout = "~/Views/Shared/Saler.cshtml";
 }
-
 
 <style>
     .field-validation-errror {
         color: red;
     }
+
+    th, td {
+        padding: 5px;
+    }
+
+    h2 {
+        padding-top: 10px;
+    }
 </style>
-
-
 <h2>Đăng Nhập</h2>
-@using (Html.BeginForm("LoginAcount", "LoginUser"))
-{
-    @Html.AntiForgeryToken()
-    <table cellspacing="5" cellpadding="5">
-        <tr>
-            <td>Tài Khoản</td>
-            <td>@Html.TextBoxFor(model => model.NameUser, new { style = "field-validation-error" })</td>
-            <td>@Html.ValidationMessageFor(model => model.NameUser)</td>
-        </tr>
+<div style="margin-left:40%">
 
-        <tr>
-            <td>Mật Khẩu</td>
-            <td>@Html.EditorFor(model => model.PasswordUser)</td>
-            <td>@Html.ValidationMessageFor(model => model.PasswordUser)</td>
-            @if (ViewBag.ErrorInfo == null)
-            {
-                <p>@ViewBag.ErrorInfo</p>
-            }
-        </tr>
+    @using (Html.BeginForm("LoginAcount", "Admin"))
+    {
+        @Html.AntiForgeryToken()
+        <div style="margin-left: 40%; border: 1px solid black; margin: 10px; padding: 10px; border-radius: 10px; background-color: white; padding-bottom: 10px;width:fit-content">
+            <table style="border-spacing:10px">
+                <tr>
+                    <td>Tài Khoản</td>
+                    <td>@Html.TextBoxFor(model => model.NameUser, new { style = "field-validation-error" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.NameUser)</td>
+                </tr>
 
-        <tr>
+                <tr>
+                    <td>Mật Khẩu</td>
+                    <td>@Html.EditorFor(model => model.PasswordUser)</td>
+                    <td>@Html.ValidationMessageFor(model => model.PasswordUser)</td>
+                    @if (ViewBag.ErrorInfo == null)
+                    {
+                        <p>@ViewBag.ErrorInfo</p>
+                    }
 
-            <td> <input type="submit" value="Đăng nhập" /></td>
+                </tr>
 
-        </tr>
-    </table>
-}
+                <tr>
+                    <td></td>
+                    <td> <input type="submit" value="Đăng nhập" /></td>
 
-
+                </tr>
+            </table>
+        </div>
+    }
+</div>

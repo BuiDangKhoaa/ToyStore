@@ -6,37 +6,38 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <script src="~/Scripts/script.js"> </script>
+    <script src="~/Scripts/script.js"></script>
     <style>
-        #div-footer{
-            position:fixed;
-            text-align:center;
-            bottom:0;
-            left:0;
-
-            padding-top:15px;
-            height:50px;
-            width:100%;
-            background-color:aquamarine;
-        }
-        li.format-hello{
-            padding-top:15px;
-            color:crimson;
-        }
-        #animation-top5:hover{
-            color:white;
-            text-shadow:1px 1px 2px gray,0 0 25px red,0 0 5px red;
-        }
-        .navbar-inverse .navbar-nav>li>a{
-            color:crimson;
-            font-size:14px;
-        }
-        .navbar-inverse{
-            background-color:antiquewhite;
-            padding-bottom:10px;
+        #div-footer {
+            position: fixed;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            padding-top: 15px;
+            height: 50px;
+            width: 100%;
+            background-color: aquamarine;
         }
 
+        li.format-hello {
+            padding-top: 15px;
+            color: crimson;
+        }
 
+        #animation-top5:hover {
+            color: white;
+            text-shadow: 1px 1px 2px gray,0 0 25px red,0 0 5px red;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: crimson;
+            font-size: 14px;
+        }
+
+        .navbar-inverse {
+            background-color: antiquewhite;
+            padding-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -83,44 +84,34 @@
                 </ul>
             </div>
         </div>
-        <div style="text-align:center;padding-top:10px;padding-bottom:10px">
-            @using (Html.BeginForm("Search", "Product"))
-            {
-
-                <input type="text" name="_name" style="width:500px" />
-                <input type="submit" value="Tìm kiếm" />
-
-            }
-        </div>
-        @{Html.RenderAction("CategoryPartial", "Categories"); }
+     
+   
     </div>
-   
+
     <div class="container-fluid body-content" style="padding-bottom:40px">
-   
+
         <div style="text-align:center;padding-top:10px">
-            <ul style="text-decoration: none; background-color: palevioletred; border-radius: 10px; margin-top: 100px; list-style-type: none; padding: 20px;">
-                <li> <a href="/OrderDetail/GroupByTop5" style="color:white;" id="animation-top5">Top 5 sản phẳm bán chạy nhất</a></li>
-            </ul>
+         
             <div class="col-md" id="div-content" style="border-radius: 10px">
                 @RenderBody()
             </div>
         </div>
-         
-      
+
+
     </div>
     <br />
-  
-        <footer style="background-color: antiquewhite; text-align:center;border-radius:10px;padding-top:10px">
-            <div class="navbar navbar-inverse navbar-fixed-bottom">
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-                <p>Bùi Đăng Khoa_21DH113768</p>
-                @*<p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>
+
+    <footer style="background-color: antiquewhite; text-align:center;border-radius:10px">
+        <div class="navbar navbar-inverse navbar-fixed-bottom">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>Bùi Đăng Khoa_21DH113768</p>
+            @*<p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>
                 <p>Thông tin liên hệ: 0123456789 </p>
                 <p>Địa chỉ email: Huflit@st.edu.vn</p>*@
-            </div>
+        </div>
 
-        </footer>
-    
+    </footer>
+
 
 
     @Scripts.Render("~/bundles/jquery")
