@@ -21,12 +21,7 @@
     .btn-default {
         background-color: lightcoral
     }
-    /*#div_search {
-        padding-top: 15px;
-        height: 30px;
-        width: 100%;
-        text-align: center;
-    }*/
+   
     .card-pro {
         border: 1px solid black;
         margin: 10px;
@@ -59,13 +54,8 @@
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card-pro">
                             <a href="/Product/DetailsList/@pro.ProductID"> <br /> <img src="@Url.Content(pro.ImagePro)" height="160" width="160" /></a>
-                            @*<p>@Html.DisplayFor(model => pro.ProductID)</p>*@
-                            @*<img src="@Url.Content(pro.ImagePro)" height="160" width="160" />*@
                             <a href="/Product/DetailsList/@pro.ProductID"> <br />@Html.DisplayFor(model => pro.NamePro)</a>
                             <p>@Html.DisplayFor(model => pro.Price)</p>
-                            @*<p><input type="submit" value="Buy" id="buy"/></p>*@
-                            @*<a href="/Product/DetailCus/@pro.ProductID" class="btn btn-default">Detail</a>*@
-
                             <a href="/ShoppingCart/AddToCart/@pro.ProductID" class="btn btn-default">Mua hàng</a>   
                         </div>
                     </div>

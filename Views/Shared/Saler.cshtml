@@ -63,15 +63,15 @@
 
                     <li> <a href="/Admin/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
                     <li> <a href="/Admin/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
-                    
-                        @if (Session["NameUser"] != null)
-                        {
-                        <li> <a href="@Url.Action("LogOutUser", "Admin")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
-                         }
-                 
-                        
 
-                    </ul>
+                    @if (Session["NameUser"] != null)
+                    {
+                        <li> <a href="@Url.Action("LogOutUser", "Admin")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
+                    }
+
+
+
+                </ul>
             </div>
         </div>
 
@@ -91,16 +91,16 @@
     </div>
     <br />
 
-    <footer style="background-color: antiquewhite; text-align:center;border-radius:10px">
-        <div class="navbar navbar-inverse navbar-fixed-bottom">
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            <p>Bùi Đăng Khoa_21DH113768</p>
-            @*<p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>
-                <p>Thông tin liên hệ: 0123456789 </p>
-                <p>Địa chỉ email: Huflit@st.edu.vn</p>*@
-        </div>
 
-    </footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom" style="background-color: antiquewhite; text-align:center;border-radius:10px;padding-top:10px">
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <p>Bùi Đăng Khoa_21DH113768</p>
+        @*<p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>
+            <p>Thông tin liên hệ: 0123456789 </p>
+            <p>Địa chỉ email: Huflit@st.edu.vn</p>*@
+    </div>
+
+
 
 
 

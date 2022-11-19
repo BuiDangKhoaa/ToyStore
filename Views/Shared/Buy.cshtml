@@ -55,7 +55,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Trở thành người bán", "FormLogin", "Admin")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Product")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -66,33 +68,39 @@
                         </span>
                         @Html.Action("BagCart", "ShoppingCart")
                     </li>
-
+                    <li> <a href="/LoginUser/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
+                    <li> <a href="/LoginUser/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
                     <li class="format-hello">
                         @if (Session["NameUser"] == null)
                         {
-
-                        <li> <a href="/LoginUser/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
-                        <li> <a href="/LoginUser/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
-                        <li style="color:crimson">  Xin chào quý khách !</li>
-                    }
-                    else
-                    {
+                            <span>Xin chào quý khách !</span>
+                        }
+                        else
+                        {
                         <li> <a href="@Url.Action("LogOutUser", "LoginUser")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
 
-                        <li style="color:crimson"> Xin Chào @Session["NameUser"] !</li>
+                        <li> <text>Xin Chào </text> @Session["NameUser"] !</li>
                     }
                         </li>
                     </ul>
                 </div>
             </div>
+            <div style="text-align:center;padding-top:10px;padding-bottom:10px">
+                @using (Html.BeginForm("Search", "Product"))
+                {
 
+                    <input type="text" name="_name" style="width:500px" />
+                    <input type="submit" value="Tìm kiếm" />
 
+                }
+            </div>
+            @{Html.RenderAction("CategoryPartial", "Categories"); }
         </div>
 
-        <div class="container-fluid body-content" style="padding-bottom:40px">
+        <div class="container-fluid body-content"style="padding-top:5%" >
 
             <div style="text-align:center;padding-top:10px">
-
+                         
                 <div class="col-md" id="div-content" style="border-radius: 10px">
                     @RenderBody()
                 </div>
@@ -102,16 +110,16 @@
         </div>
         <br />
 
+        
+            <div class="navbar navbar-inverse navbar-fixed-bottom"style="background-color: antiquewhite; text-align:center;border-radius:10px;padding-top:10px">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                <p>Bùi Đăng Khoa_21DH113768</p>
+                @*<p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>
+                    <p>Thông tin liên hệ: 0123456789 </p>
+                    <p>Địa chỉ email: Huflit@st.edu.vn</p>*@
+            </div>
 
-        <div class="navbar navbar-inverse navbar-fixed-bottom" style="background-color: antiquewhite; text-align:center;border-radius:10px;padding-top:10px">
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            <p>Bùi Đăng Khoa_21DH113768</p>
-            @*<p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>
-                <p>Thông tin liên hệ: 0123456789 </p>
-                <p>Địa chỉ email: Huflit@st.edu.vn</p>*@
-        </div>
-
-
+        
 
 
 

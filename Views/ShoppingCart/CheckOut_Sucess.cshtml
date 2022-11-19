@@ -27,12 +27,11 @@
     </style>
 </head>
 <body>
-    <div class="Order">      
+    <div class="Order">
         <h4>Đơn hàng của bạn đã được gửi đến shop.Bạn sẽ nhận được hàng trong 2 - 3 ngày tới.</h4>
         <h3>Xin chân thành cảm ơn</h3>
-        <a href="@Url.Action("Index","Product")class="btn btn-default">Tiếp tục mua hàng </a>
-    </div>
-    <div>
+        @*<a href="@Html.ActionLink("Index","Product")class=" btn btn-default">Tiếp tục mua hàng </a>*@
+        @Html.ActionLink("Tiếp tục mua hàng", "Index", "Product")
     </div>
 </body>
 </html>
