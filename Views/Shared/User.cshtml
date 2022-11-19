@@ -55,9 +55,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Product")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Trở thành người bán", "FormLogin", "Admin")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -73,16 +71,15 @@
                         @if (Session["NameUser"] == null)
                         {
                      
-
                         <li> <a href="/LoginUser/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
                         <li> <a href="/LoginUser/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
-                        <li>  Xin chào quý khách !</li>
+                         <li style="color:crimson">  Xin chào quý khách !</li>
                     }
                     else
                     {
                         <li> <a href="@Url.Action("LogOutUser", "LoginUser")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
 
-                        <li> <text>Xin Chào </text> @Session["NameUser"] !</li>
+                        <li style="color:crimson"> Xin Chào @Session["NameUser"] !</li>
                     }
                         </li>
                     </ul>

@@ -306,6 +306,7 @@
     <Content Include="Views\OrderPro\Edit.cshtml" />
     <Content Include="Views\OrderPro\Delete.cshtml" />
     <Content Include="Views\Admin\RegisterUser.cshtml" />
+    <Content Include="Views\Product\Sua.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

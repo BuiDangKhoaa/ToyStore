@@ -91,17 +91,51 @@ namespace ToyStore.Controllers
         {
             return View(db.Products.Where(s => s.ProductID == id).FirstOrDefault());
         }
-        public ActionResult Edit(int id)
+        public ActionResult Sua(int? id,HttpPostedFileBase Image)
         {
-            return View(db.Products.Where(s => s.ProductID == id).FirstOrDefault());
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product pro = db.Products.Find(id);
+            if (pro == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Category = new SelectList(db.Categories, "IDCate", "NameCate", pro.Category);
+            return View(pro);
         }
         [HttpPost]
-        public ActionResult Edit(int id, Product cate)
+        [ValidateAntiForgeryToken]
+        public ActionResult Sua([Bind(Include ="ProductID,NamePro,DecreptionPro,Category,Price,ImagePro")]Product product,HttpPostedFileBase ImagePro)
         {
-            db.Entry(cate).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("List");
+            if (ModelState.IsValid)
+            {
+                if (ImagePro != null)
+                {
+                    var filename = Path.GetFileName(ImagePro.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Images"), filename);
+                    product.ImagePro = filename;
+                    ImagePro.SaveAs(path);
+                }
+                db.Entry(product).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.Category = new SelectList(db.Categories, "IDCate", "NameCate", product.Category);
+            return View(product);
         }
+        //public ActionResult Edit(int id)
+        //{
+        //    return View(db.Products.Where(s => s.ProductID == id).FirstOrDefault());
+        //}
+        //[HttpPost]
+        //public ActionResult Edit(int id, Product cate)
+        //{
+        //    db.Entry(cate).State = System.Data.Entity.EntityState.Modified;
+        //    db.SaveChanges();
+        //    return RedirectToAction("List");
+        //}
         public ActionResult Delete(int id)
         {
             return View(db.Products.Where(s => s.ProductID == id).FirstOrDefault());
