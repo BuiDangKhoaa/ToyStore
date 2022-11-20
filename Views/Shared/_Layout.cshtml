@@ -57,7 +57,12 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                @Html.ActionLink("Null Toy", "Index", "Product", new { area = "" }, new { @class = "navbar-brand" })
+                <span>
+                    <a href="@Url.Action("Home", "Product")">
+                        <img src="~/Content/images/Null.jpg" class="header_logo header-logo" alt="#" height="100" width="200" />
+                     
+                    </a>
+                </span>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -120,8 +125,8 @@
         <br />
 
         <footer>
-            <div class="navbar navbar-inverse @*navbar-fixed-bottom*@" style="background-color: antiquewhite; text-align:center;border-radius:10px;padding-top:10px">
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="navbar navbar-inverse navbar-fixed-bottom" style="background-color: antiquewhite; text-align:center;border-radius:10px;padding-top:10px">
+                @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
                 <p>Bùi Đăng Khoa_21DH113768</p>
                 @*<p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>
             <p>Thông tin liên hệ: 0123456789 </p>

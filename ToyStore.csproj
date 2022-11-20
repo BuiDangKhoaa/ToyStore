@@ -218,6 +218,7 @@
     <Content Include="Content\images\9.jpg" />
     <Content Include="Content\images\giohang.jpg" />
     <Content Include="Content\images\logo.jpg" />
+    <Content Include="Content\images\Null.jpg" />
     <Content Include="Content\images\đồ chơi.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
