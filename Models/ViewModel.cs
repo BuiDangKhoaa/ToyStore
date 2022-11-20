@@ -20,6 +20,8 @@ namespace ToyStore.Models
         public OrderDetail orderDetail { get; set; }
         public IEnumerable<Product> ListProduct { get;  set; }
         public int? Top5_Quantity { get; set; }
+        public int? Top5_New { get; set; }
+
         public int? Sum_Quantity { get; set; } 
 
     }

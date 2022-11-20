@@ -169,6 +169,32 @@ namespace ToyStore.Controllers
             return View();
         }
 
+        public ActionResult TopNew()
+        {
+
+            List<Product> proList = db.Products.ToList();
+            var query = from od in proList
+                        join p in proList on od.ProductID equals p.ProductID into tbl
+                        group od by new
+                        {
+                            idPro = od.ProductID,
+                            namePro = od.NamePro,
+                            imagePro = od.ImagePro,
+                            price = od.Price
+                        } into gr
+                        orderby gr.Max(s => s.ProductID) descending
+                        select new ViewModel
+                        {
+                            IDPro = gr.Key.idPro,
+                            NamePro = gr.Key.namePro,
+                            ImgPro = gr.Key.imagePro,
+                            pricePro = (decimal)gr.Key.price,
+                            Top5_New = gr.Max(s => s.ProductID)
+                        };
+            return View(query.Take(5).ToList());
+
+        }
+
 
 
     }
