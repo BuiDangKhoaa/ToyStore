@@ -164,6 +164,10 @@ namespace ToyStore.Controllers
                 return View(db.Products.Where(s => s.NamePro.Contains(_name)).ToList());
             //return View(db.Categories.ToList());
         }
+        public ActionResult Home()
+        {
+            return View();
+        }
 
 
 

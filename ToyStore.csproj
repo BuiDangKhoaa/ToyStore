@@ -309,6 +309,7 @@
     <Content Include="Views\Product\Sua.cshtml" />
     <Content Include="Views\OrderDetail\Test.cshtml" />
     <Content Include="Views\Shared\Buy.cshtml" />
+    <Content Include="Views\Product\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
