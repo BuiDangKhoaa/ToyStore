@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/Saler.cshtml";
 }
 
-<h2>Sửa</h2>
+<h2 style="text-align:center">Sửa sản phẩm</h2>
 
 
 @using (Html.BeginForm())
@@ -51,16 +51,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="control-label col-md-2">
-                Giá
-            </div>
-
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-            </div>
-        </div>
+   
 
         <div class="form-group">
             <div class="control-label col-md-2">
@@ -70,11 +61,8 @@
             <div class="col-md-10">
                 @*<input type="file" name="UploadImage" />*@
 
-                <input type="file" name="UploadImage" onchange="ChangeImage(this, document.getElementById('previewImg'))" />
-                <img src="@Url.Content(Model.ImagePro)" height="150" width="150" id="previewImg" />
-               
+                @Html.EditorFor(model => model.ImagePro, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ImagePro, "", new { @class = "text-danger" })
-
 
 
             </div>

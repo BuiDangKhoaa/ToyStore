@@ -38,6 +38,7 @@
             background-color: antiquewhite;
             padding-bottom: 10px;
         }
+      
     </style>
 </head>
 <body>
@@ -51,11 +52,11 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                @Html.ActionLink("Null Toy", "Index", "Product", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Null Toy", "Home", "Product", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Product")</li>
+                    <li>@Html.ActionLink("Home", "Home", "Product")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -97,20 +98,12 @@
             @{Html.RenderAction("CategoryPartial", "Categories"); }
         </div>
 
-        <div class="container-fluid body-content"style="padding-top:5%" >
-
+        <div class="container-fluid body-content" style="padding-top:15%">
             <div style="text-align:center;padding-top:10px">
-                         
-                <div class="col-md" id="div-content" style="border-radius: 10px">
                     @RenderBody()
-                </div>
             </div>
-
-
         </div>
         <br />
-
-        
             <div class="navbar navbar-inverse navbar-fixed-bottom"style="background-color: antiquewhite; text-align:center;border-radius:10px;padding-top:10px">
                 <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
                 <p>Bùi Đăng Khoa_21DH113768</p>
@@ -118,11 +111,6 @@
                     <p>Thông tin liên hệ: 0123456789 </p>
                     <p>Địa chỉ email: Huflit@st.edu.vn</p>*@
             </div>
-
-        
-
-
-
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)

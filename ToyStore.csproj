@@ -189,6 +189,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Banner.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -235,6 +236,7 @@
       <DependentUpon>EntitiesDB.edmx</DependentUpon>
       <LastGenOutput>EntitiesDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\Banner.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\EntitiesDB.edmx">
@@ -313,6 +315,7 @@
     <Content Include="Views\Product\Home.cshtml" />
     <Content Include="Views\OrderDetail\New.cshtml" />
     <Content Include="Views\Product\TopNew.cshtml" />
+    <Content Include="Views\Product\Banner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

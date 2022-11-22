@@ -125,17 +125,17 @@ namespace ToyStore.Controllers
             ViewBag.Category = new SelectList(db.Categories, "IDCate", "NameCate", product.Category);
             return View(product);
         }
-        //public ActionResult Edit(int id)
-        //{
-        //    return View(db.Products.Where(s => s.ProductID == id).FirstOrDefault());
-        //}
-        //[HttpPost]
-        //public ActionResult Edit(int id, Product cate)
-        //{
-        //    db.Entry(cate).State = System.Data.Entity.EntityState.Modified;
-        //    db.SaveChanges();
-        //    return RedirectToAction("List");
-        //}
+        public ActionResult Edit(int id)
+        {
+            return View(db.Products.Where(s => s.ProductID == id).FirstOrDefault());
+        }
+        [HttpPost]
+        public ActionResult Edit(int id, Product cate)
+        {
+            db.Entry(cate).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("List");
+        }
         public ActionResult Delete(int id)
         {
             return View(db.Products.Where(s => s.ProductID == id).FirstOrDefault());
@@ -191,8 +191,12 @@ namespace ToyStore.Controllers
                             pricePro = (decimal)gr.Key.price,
                             Top5_New = gr.Max(s => s.ProductID)
                         };
-            return View(query.Take(5).ToList());
+            return PartialView(query.Take(5).ToList());
 
+        }
+        public ActionResult Banner()
+        {
+            return PartialView();
         }
 
 
