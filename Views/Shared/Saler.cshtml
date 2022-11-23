@@ -55,23 +55,39 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Danh sách sản phẩm", "List", "Product")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Trở thành người mua", "FormLogin", "LoginUser")</li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-
-                    <li> <a href="/Admin/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
-                    <li> <a href="/Admin/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
-
+                    <li>@Html.ActionLink("Kênh người mua", "FormLogin", "LoginUser")</li>
                     @if (Session["NameUser"] != null)
                     {
-                        <li> <a href="@Url.Action("LogOutUser", "Admin")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
+                        <li>@Html.ActionLink("Danh sách sản phẩm", "List", "Product")</li>
+                        <li>@Html.ActionLink("Loại sản phẩm", "Index", "Categories")</li>
+                        <li>@Html.ActionLink("Khách hàng", "Index", "Customers")</li>
+                        <li>@Html.ActionLink("Đơn hàng", "Index", "OrderPro")</li>
                     }
 
 
 
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="format-hello">
+                        @if (Session["NameUser"] == null)
+                        {
+
+                        <li> <a href="/LoginUser/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
+                        <li> <a href="/LoginUser/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
+                        <li style="color:crimson">  Xin chào quý khách !</li>
+                    }
+                    else
+                    {
+                        <li> <a href="@Url.Action("LogOutUser", "Admin")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
+
+                        <li style="color:crimson"> Xin Chào @Session["NameUser"] !</li>
+                    }
+                        </li>
+
+
+
+                    </ul>
             </div>
         </div>
 

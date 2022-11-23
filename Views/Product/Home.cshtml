@@ -4,7 +4,6 @@
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div id="Top5"> @{Html.RenderAction("GroupByTop5", "OrderDetail"); }</div>
 @{Html.RenderAction("TopNew", "Product");}
 @{Html.RenderAction("Index", "Product");}

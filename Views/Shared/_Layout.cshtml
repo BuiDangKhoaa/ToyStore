@@ -6,48 +6,102 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <script src="~/Scripts/script.js"> </script>
+    <script src="~/Scripts/script.js"></script>
     <style>
-        #div-footer{
-            position:fixed;
-            text-align:center;
-            bottom:0;
-            left:0;
+        .div-footer {
+            text-align: center;
+            bottom: 0px;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            text-align: center;
+        }
 
-            padding-top:15px;
-            height:50px;
-            width:100%;
-            background-color:aquamarine;
+        li.format-hello {
+            padding-top: 15px;
+            color: crimson;
         }
-        li.format-hello{
-            padding-top:15px;
-            color:crimson;
+        /*#animation-top5:hover {
+            color: white;
+            text-shadow: 1px 1px 2px gray, 0 0 25px red, 0 0 5px red;
+            height: 10px;
+        }*/
+        .search {
+            text-align: center;
         }
-        #animation-top5:hover{
-            color:white;
-            text-shadow:1px 1px 2px gray,0 0 25px red,0 0 5px red;
+
+        .navbar-inverse .navbar-brand {
+            color: crimson;
+            font-size: 40px;
+            font-family: ui-monospace;
         }
-        .navbar-inverse .navbar-nav>li>a{
-            color:crimson;
-            font-size:14px;
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: crimson;
+            font-size: 15px;
         }
-        .navbar-inverse{
-            background-color:antiquewhite;
-            padding-bottom:10px;
+
+        input, select, textarea {
+            max-width: 500px;
         }
-        #Top5 {
-            text-decoration: none;
-            border-radius: 10px;
-            list-style-type: none;
-            padding-top:12%;
-         
-       
+
+        .navbar-inverse .navbar-brand {
+            color: crimson;
+            font-size: 30px;
+            font-family: ui-monospace;
+        }
+
+        aa.navbar-brand {
+            padding-top: 10px;
+        }
+
+        img.header_logo.header-logo {
+            left: 13%;
+            position: absolute;
+            top: 35%;
         }
     </style>
+    @*<style>
+            #div-footer{
+                position:fixed;
+                text-align:center;
+                bottom:0;
+                left:0;
+
+                padding-top:15px;
+                height:50px;
+                width:100%;
+                background-color:aquamarine;
+            }
+            li.format-hello{
+                padding-top:15px;
+                color:crimson;
+            }
+            #animation-top5:hover{
+                color:white;
+                text-shadow:1px 1px 2px gray,0 0 25px red,0 0 5px red;
+            }
+            .navbar-inverse .navbar-nav>li>a{
+                color:crimson;
+                font-size:14px;
+            }
+            .navbar-inverse{
+                background-color:antiquewhite;
+                padding-bottom:10px;
+            }
+            #Top5 {
+                text-decoration: none;
+                border-radius: 10px;
+                list-style-type: none;
+
+
+
+            }
+        </style>*@
 </head>
 <body>
     <div>
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top"style="background-color:antiquewhite">
 
             <div class="container">
                 <div class="navbar-header">
@@ -56,17 +110,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    @*<span>
+            <a href="@Url.Action("Home", "Product")">
+                <img src="~/Content/images/Null.jpg" class="header_logo header-logo" alt="#" height="100" width="200" />
+            </a>
+        </span>*@
                     <span>
-                        <a href="@Url.Action("Home", "Product")">
-                            <img src="~/Content/images/Null.jpg" class="header_logo header-logo" alt="#" height="100" width="200" />
+                        <a href="@Url.Action("Index", "Product")">
+                            <img src="~/Content/images/Null.jpg" class="header_logo header-logo" alt="#" height="70" width="120" />
+                            @Html.ActionLink("NullStore", "Index", "Product", new { area = "" }, new { @class = "navbar-brand" })
                         </a>
                     </span>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Home", "Product")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Kênh người bán", "FormLogin", "Admin")</li>
+                        <li>@Html.ActionLink("Hỗ trợ", "Contact", "Home")</li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -106,12 +165,12 @@
         
         </div>
 
-        <div class="container-fluid body-content">
+        <div class="container-fluid body-content"style="padding-top:50px">
             <div style="text-align:center;">
          
-                <div id="div-content" style="border-radius:10px">
-                    <div id="Top5"> @{Html.RenderAction("Test", "OrderDetail"); }</div>
-                    <div style="padding:10px">@{Html.RenderAction("TopNew", "Product");} </div>  
+                <div id="div-content" style="border-radius: 10px;padding-bottom: 20px; padding-top: 10px">
+                    @*<div id="Top5"> @{Html.RenderAction("Test", "OrderDetail"); }</div>
+                    <div style="padding:10px">@{Html.RenderAction("TopNew", "Product");} </div>*@  
                     @RenderBody()
                 </div>
             </div>
