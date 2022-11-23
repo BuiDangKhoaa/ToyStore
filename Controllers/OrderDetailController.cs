@@ -68,28 +68,7 @@ namespace ToyStore.Controllers
         }
          public ActionResult New()
         {
-            List<OrderDetail> orderD = db.OrderDetails.ToList();
-            List<Product> proList = db.Products.ToList();
-            var query = from od in orderD
-                        join p in proList on od.IDProduct equals p.ProductID into tbl
-                        group od by new
-                        {
-                            idPro = od.IDProduct,
-                            namePro = od.Product.NamePro,
-                            imagePro = od.Product.ImagePro,
-                            price = od.Product.Price
-                        } into gr
-                        orderby gr.Max(s=>s.ID) descending
-                        select new ViewModel
-                        {
-                            IDPro = gr.Key.idPro,
-                            NamePro = gr.Key.namePro,
-                            ImgPro = gr.Key.imagePro,
-                            pricePro = (decimal)gr.Key.price,
-                            Top5_New = gr.Max(s => s.ID)
-                        };
-            return View(query.Take(5).ToList());
-
+            return PartialView();
         }
     }
 }

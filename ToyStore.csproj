@@ -217,6 +217,10 @@
     <Content Include="Content\images\7.jpg" />
     <Content Include="Content\images\8.jpg" />
     <Content Include="Content\images\9.jpg" />
+    <Content Include="Content\images\banner1.jpg" />
+    <Content Include="Content\images\banner2.jpg" />
+    <Content Include="Content\images\banner3.jpg" />
+    <Content Include="Content\images\banner4.jpg" />
     <Content Include="Content\images\giohang.jpg" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\images\Null.jpg" />

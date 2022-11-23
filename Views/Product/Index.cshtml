@@ -48,8 +48,10 @@
     }
 </style>
 
+<div style="padding-top:50px">
+    @{ Html.RenderAction("New", "OrderDetail");}
+</div>
 
-<br />
 @{ Html.RenderAction("GroupByTop5", "OrderDetail");}
 @{ Html.RenderAction("TopNew", "Product");}
 @using (Html.BeginForm("SearchOption", "Product"))
