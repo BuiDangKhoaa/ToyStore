@@ -3,25 +3,27 @@
     ViewBag.Title = "ShowCart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Giỏ hàng</h2>
-<a href="@Url.Action("Index","Product")">Tiếp tục mua hàng</a>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Tên sản phầm</th>
-            <th>Hình sản phẩm</th>
-            <th>Giá</th>
-            <th>Số lượng</th>
-            <th>Thành tiền</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td colspan="6">
-                Chưa có sản phẩm nào ...
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div style="padding-top:40px">
+    <h2>Giỏ hàng</h2>
+    <a href="@Url.Action("Index","Product")">Tiếp tục mua hàng</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên sản phầm</th>
+                <th>Hình sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="6">
+                    Chưa có sản phẩm nào ...
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
+</div>
