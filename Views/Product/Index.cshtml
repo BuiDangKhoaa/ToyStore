@@ -71,9 +71,10 @@
                 {
                     <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card-pro">
-                            <a href="/Product/DetailCus/@pro.ProductID"> <br /> <img src="@Url.Content(pro.ImagePro)" height="160" width="160" /></a>
-                            <a href="/Product/DetailCus/@pro.ProductID"> <br />@Html.DisplayFor(model => pro.NamePro)</a>
+                            <a href="/Product/DetailsList/@pro.ProductID"> <br /> <img src="@Url.Content(pro.ImagePro)" height="160" width="160" /></a>
+                            <a href="/Product/DetailsList/@pro.ProductID"> <br />@Html.DisplayFor(model => pro.NamePro)</a>
                             <p>@Html.DisplayFor(model => pro.Price)</p>
+                            <a href="/Product/DetailsList/@pro.ProductID" class="btn btn-default">Chi tiết</a>
                             <a href="/ShoppingCart/AddToCart/@pro.ProductID" class="btn btn-default">Mua hàng</a>
                         </div>
                     </div>

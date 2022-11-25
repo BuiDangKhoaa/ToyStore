@@ -18,17 +18,17 @@ namespace ToyStore.Models
     public partial class AdminUser
     {
         [Display(Name = "Mã User")]
+        [Required(ErrorMessage = "ID không được trống .....")]
         public int ID { get; set; }
-        [Required(ErrorMessage = "Name not emtpy .....")]
-
-        [Display(Name = "Tên User")]
+        [Display(Name = "Tên User")]  
+        [Required(ErrorMessage = "Tên không được trống .....")]
         public string NameUser { get; set; }
 
         [DisplayName("Vị trí")]
         public string RoleUser { get; set; }
 
         [DisplayName("Nhập mật khẩu")]
-        [Required(ErrorMessage = "Pass not emtpy ....")]
+        [Required(ErrorMessage = "Mật khẩu không được trống ....")]
         [DataType(DataType.Password)]
         public string PasswordUser { get; set; }
 

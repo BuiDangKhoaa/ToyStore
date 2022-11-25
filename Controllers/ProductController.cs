@@ -19,7 +19,7 @@ namespace ToyStore.Controllers
         DBSportStoreEntities db = new DBSportStoreEntities();
         public ActionResult Index(string category,int? page ,double min=double.MinValue,double max=double.MaxValue)
         {
-            int pageSize = 8;
+            int pageSize = 2;
             int pageNum = (page ?? 1);
           
             if (category == null)
@@ -77,12 +77,19 @@ namespace ToyStore.Controllers
             var list = db.Products.Where(p => (double)p.Price >= min && (double)p.Price <= max).ToList();
             return View(list);
         }
+        //public ActionResult Search(string _name)
+        //{
+        //    var list = db.Products.Where(p => p.NamePro == _name).ToList();
+        //        return View(list);
+        //}
         public ActionResult Search(string _name)
         {
-            var list = db.Products.Where(p => p.NamePro == _name).ToList();
-                return View(list);
+            if (_name == null)
+                return View(db.Products.ToList());
+            else
+                return View(db.Products.Where(s => s.NamePro.Contains(_name)).ToList());
         }
-      
+
         public ActionResult Details(int id)
         {
             return View(db.Products.Where(s => s.ProductID == id).FirstOrDefault());
@@ -148,7 +155,7 @@ namespace ToyStore.Controllers
                 cate = db.Products.Where(s => s.ProductID == id).FirstOrDefault();
                 db.Products.Remove(cate);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("List");
             }
             catch
             {
