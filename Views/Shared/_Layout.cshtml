@@ -136,15 +136,16 @@
                             </span>
                             @Html.Action("BagCart", "ShoppingCart")
                         </li>
-                        <li> <a href="/LoginUser/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
-                        <li> <a href="/LoginUser/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
+
                         <li class="format-hello">
                             @if (Session["NameUser"] == null)
                             {
-                                <span>Xin chào quý khách !</span>
-                            }
-                            else
-                            {
+                            <li> <a href="/LoginUser/RegisterUser"><span class="glyphicon glyphicon-user"></span>Đăng Ký </a></li>
+                            <li> <a href="/LoginUser/FormLogin"><span class="glyphicon glyphicon-log-in"></span>Đăng Nhập</a></li>
+                            <span>Xin chào quý khách !</span>
+                        }
+                        else
+                        {
                             <li> <a href="@Url.Action("LogOutUser", "LoginUser")"><span class="glyphicon glyphicon-log-out"></span>Đăng Xuất</a></li>
                             <li> <text>Xin Chào </text> @Session["NameUser"] !</li>
                         }
