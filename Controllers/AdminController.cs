@@ -43,6 +43,7 @@ namespace ToyStore.Controllers
             if (ModelState.IsValid)
             {
                 var check_ID = db.AdminUsers.Where(s => s.ID == _user.ID).FirstOrDefault();
+                var check_NameUser = db.AdminUsers.Where(s => s.NameUser == _user.NameUser).FirstOrDefault();
                 if (check_ID == null)
                 {
                     db.Configuration.ValidateOnSaveEnabled = false;
@@ -52,7 +53,8 @@ namespace ToyStore.Controllers
                 }
                 else
                 {
-                    ViewBag.ErrorRegister = "This ID is exixst";
+                    ViewBag.ErrorRegister = "Tên đã tồn tại";
+                    ViewBag.ErrorRegister = "ID đã tồn tại";
                     return View();
                 }
 

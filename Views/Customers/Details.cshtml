@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/Saler.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết khách hàng</h2>
 
 <div>
-    <h4>Customer</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.IDCus)
+            Mã khách hàng
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NameCus)
+            Tên khách hàng
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneCus)
+            Số điện thoại
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EmailCus)
+            E-mail khách hàng
         </dt>
 
         <dd>
@@ -47,5 +47,5 @@
 </div>
 <p>
     @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Quay về", "Index")
 </p>

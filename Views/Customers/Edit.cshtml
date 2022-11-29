@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/Saler.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Chỉnh sửa thông tin</h2>
 
 
 @using (Html.BeginForm())
@@ -13,51 +13,59 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Customer</h4>
+       
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.IDCus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.IDCus, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.IDCus, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            <b>Mã khách hàng</b>
         </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IDCus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IDCus, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.NameCus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NameCus, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NameCus, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            <b>Tên khách hàng</b>
         </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NameCus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NameCus, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PhoneCus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PhoneCus, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PhoneCus, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            <b>Số điện thoại</b>
         </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PhoneCus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PhoneCus, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmailCus, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EmailCus, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EmailCus, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            <b>E-mail Khách hàng</b>
         </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EmailCus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EmailCus, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Lưu lại" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Quay về", "Index")
 </div>
 
 @section Scripts {

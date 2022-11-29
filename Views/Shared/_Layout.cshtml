@@ -61,47 +61,10 @@
             top: 35%;
         }
     </style>
-    @*<style>
-            #div-footer{
-                position:fixed;
-                text-align:center;
-                bottom:0;
-                left:0;
-
-                padding-top:15px;
-                height:50px;
-                width:100%;
-                background-color:aquamarine;
-            }
-            li.format-hello{
-                padding-top:15px;
-                color:crimson;
-            }
-            #animation-top5:hover{
-                color:white;
-                text-shadow:1px 1px 2px gray,0 0 25px red,0 0 5px red;
-            }
-            .navbar-inverse .navbar-nav>li>a{
-                color:crimson;
-                font-size:14px;
-            }
-            .navbar-inverse{
-                background-color:antiquewhite;
-                padding-bottom:10px;
-            }
-            #Top5 {
-                text-decoration: none;
-                border-radius: 10px;
-                list-style-type: none;
-
-
-
-            }
-        </style>*@
 </head>
 <body>
     <div>
-        <div class="navbar navbar-inverse navbar-fixed-top"style="background-color:antiquewhite">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:antiquewhite">
 
             <div class="container">
                 <div class="navbar-header">
@@ -110,15 +73,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    @*<span>
-            <a href="@Url.Action("Home", "Product")">
-                <img src="~/Content/images/Null.jpg" class="header_logo header-logo" alt="#" height="100" width="200" />
-            </a>
-        </span>*@
                     <span>
-                        <a href="@Url.Action("Index", "Product")">
+                        <a href="@Url.Action("Home", "Product")">
                             <img src="~/Content/images/Null.jpg" class="header_logo header-logo" alt="#" height="70" width="120" />
-                            @Html.ActionLink("NullStore", "Index", "Product", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink("NullStore", "Home", "Product", new { area = "" }, new { @class = "navbar-brand" })
                         </a>
                     </span>
                 </div>
@@ -159,19 +117,22 @@
                         <input type="text" name="_name" style="width:1000px" />
                         <input type="submit" value="Tìm kiếm" />
                     }
+
+
                 </div>
                 @{Html.RenderAction("CategoryPartial", "Categories"); }
 
             </div>
-        
+
         </div>
-      
-        <div class="container-fluid body-content"style="padding-top:50px">
-            <div style="text-align:center;">
+     
          
+     
+        <div class="container-fluid body-content" style="padding-top:50px">
+            <div style="text-align:center;">
+
                 <div id="div-content" style="border-radius: 10px;padding-bottom: 20px; padding-top: 10px">
-                    @*<div id="Top5"> @{Html.RenderAction("Test", "OrderDetail"); }</div>
-                    <div style="padding:10px">@{Html.RenderAction("TopNew", "Product");} </div>*@  
+
                     @RenderBody()
                 </div>
             </div>

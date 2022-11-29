@@ -5,24 +5,24 @@
     Layout = "~/Views/Shared/Saler.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Danh sách khách hàng</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo khách hàng mới", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IDCus)
+           <b>Mã khách hàng</b>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NameCus)
+            <b>Tên khách hàng</b>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhoneCus)
+            <b>Số điện thoại</b>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EmailCus)
+            <b>E-mail khách hàng</b>
         </th>
         <th></th>
     </tr>
@@ -42,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.EmailCus)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { name=item.NameCus}) |
-            @Html.ActionLink("Details", "Details", new { name = item.NameCus }) |
-            @Html.ActionLink("Delete", "Delete", new { name = item.NameCus })
+            @Html.ActionLink("Sửa", "Edit", new { name=item.NameCus}) |
+            @Html.ActionLink("Chi tiết", "Details", new { name = item.NameCus }) |
+            @Html.ActionLink("Xóa", "Delete", new { name = item.NameCus })
         </td>
     </tr>
 }

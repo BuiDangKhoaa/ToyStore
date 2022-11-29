@@ -40,18 +40,30 @@ namespace ToyStore.Models
         }
         public void Update_quantity(int id, int _new_quan)
         {
+
             var item = items.Find(s => s._product.ProductID == id);
             if (item != null)
             {
-             //   if (items.Find(s => s._product.Quantity > _new_quan) != null)//nếu số lượng mua nhỏ hơn sô lượng tồn
-                    item._quantity = _new_quan;//thì chấp nhận số lượng mua
-             //   else item._quantity = 1;//ngược lại thì số lượng mua trả về 1
+                if (items.Find(s => s._product.Quantity > _new_quan) != null || _new_quan < 1)
+                {
+
+                    item._quantity = 1;
+                }
+                else item._quantity = _new_quan;
             }
-                //item._quantity = _new_quan;
+            //var item = items.Find(s => s._product.ProductID == id);
+            //if (item != null)
+            //{
+            // //   if (items.Find(s => s._product.Quantity > _new_quan) != null)//nếu số lượng mua nhỏ hơn sô lượng tồn
+            //        item._quantity = _new_quan;//thì chấp nhận số lượng mua
+            // //   else item._quantity = 1;//ngược lại thì số lượng mua trả về 1
+            //}
+            //    //item._quantity = _new_quan;
         }
         public void Remove_CartItem(int id)
         {
             items.RemoveAll(s => s._product.ProductID == id);
+
         }
         public void CLeanCart()
         {

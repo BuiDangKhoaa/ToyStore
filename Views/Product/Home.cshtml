@@ -4,7 +4,22 @@
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div id="Top5"> @{Html.RenderAction("GroupByTop5", "OrderDetail"); }</div>
-@{Html.RenderAction("TopNew", "Product");}
-@{Html.RenderAction("Index", "Product");}
+<div style="padding-top:50px;padding-bottom:20px">
+    @{ Html.RenderAction("New", "OrderDetail");}
+</div>
 
+@using (Html.BeginForm("SearchOption", "Product"))
+{
+    <div style="border-radius:10px;border:1px solid black;background-color:lightpink ">
+        <div style="text-align: center; padding-top: 20px;padding-bottom:20px">
+            <text>Từ</text>
+            <input type="number" name="min" />
+            <text>Đến</text>
+            <input type="number" name="max" />
+            <input type="submit" value="Tìm kiếm" />
+        </div>
+    </div>
+}
+@{ Html.RenderAction("GroupByTop5", "OrderDetail");}
+@{ Html.RenderAction("TopNew", "Product");}
+@{ Html.RenderAction("Index", "Product");}

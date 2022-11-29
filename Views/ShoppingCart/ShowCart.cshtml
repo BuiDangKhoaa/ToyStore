@@ -45,7 +45,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="6" style="text-align: right">Tổng tiền:@Model.Total_money()</td>
+                    <td colspan="6" style="text-align: right;font-size:20px;color:red "><b>Tổng tiền:@Model.Total_money() </b></td>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
@@ -64,8 +64,8 @@
                                 <tr>
                                     <td></td>
                                     <td>
-                                        <input type="submit" value="CheckOut" class="btn btn-success" />
-                                        <a href="@Url.Action("Create", "Customers")" class="btn btn-success">Register</a>
+                                        <input type="submit" value="Đặt hàng" class="btn btn-success" />
+                                        <a href="@Url.Action("Create", "Customers")" class="btn btn-success">Đăng ký</a>
                                     </td>
                                 </tr>
                             </table>

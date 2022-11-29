@@ -22,6 +22,7 @@ namespace ToyStore.Models
         public int ID { get; set; }
         [Display(Name = "Tên User")]  
         [Required(ErrorMessage = "Tên không được trống .....")]
+        [StringLength(20, MinimumLength = 5, ErrorMessage = "Chiều dài tên từ 5 - 20 kí tự")]
         public string NameUser { get; set; }
 
         [DisplayName("Vị trí")]
@@ -39,31 +40,7 @@ namespace ToyStore.Models
         [NotMapped]
         public string ErrorLogin { get; set; }
 
-        //    [Display(Name = "Mã User")]
-        //    [Required(ErrorMessage="ID not empty ...")]
-        //     public int ID { get; set; }
-
-        //    [Display(Name = "Tên User")]    
-        //    [Required(ErrorMessage = "Name not empty ...")]
-        //    [StringLength(50, MinimumLength = 5, ErrorMessage = "Length of the name from 5-50 characters")]
-        //    public string NameUser { get; set; }
-
-        //[DisplayName("Nhập Mật Khẩu")]
-        //[Required(ErrorMessage = "Pass not empty ...")]
-        //[DataType(DataType.Password)]
-        //public string PasswordUser { get; set; }
-        //[NotMapped]
-        //[DisplayName("Nhập lại mật khẩu")]
-        //[Compare("PasswordUser",ErrorMessage ="Password not matched")]
-        //[DataType(DataType.Password)]
-        //public string ConfirmPass { get; set; }
-        //[NotMapped]
-        //public string ErrorLogin { get; set; }
-
-        //[DisplayName ( "Vị trí")]
-
-        //public string RoleUser { get; set; }
-
+      
 
 
 

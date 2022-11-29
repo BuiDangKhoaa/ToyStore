@@ -51,6 +51,7 @@ namespace ToyStore.Controllers
         {
             Cart cart = Session["Cart"] as Cart;
             cart.Remove_CartItem(id);
+         
             return RedirectToAction("ShowCart", "ShoppingCart");
         }
         public PartialViewResult BagCart()

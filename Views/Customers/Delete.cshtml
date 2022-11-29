@@ -5,15 +5,15 @@
     Layout = "~/Views/Shared/Saler.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Xóa khách hàng</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Bạn có chắc muốn xóa khách hàng này chứ ?</h3>
 <div>
-    <h4>Customer</h4>
+  
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.IDCus)
+           Mã khách hàng
         </dt>
 
         <dd>
@@ -21,7 +21,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NameCus)
+           Tên khách hàng
         </dt>
 
         <dd>
@@ -29,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneCus)
+           Số điện thoại
         </dt>
 
         <dd>
@@ -37,7 +37,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EmailCus)
+          E-mail khách hàng
         </dt>
 
         <dd>
@@ -50,8 +50,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay về", "Index")
         </div>
     }
 </div>
