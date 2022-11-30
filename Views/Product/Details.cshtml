@@ -4,60 +4,22 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/Saler.cshtml";
 }
-
 <h2>Chi tiết sản phẩm</h2>
-
 <div>
-
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-           Tên sản phẩm
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NamePro)
-        </dd>
-
-        <dt>
-          Chi tiết
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DecriptionPro)
-        </dd>
-
-        <dt>
-            Loại 
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-
-        <dt>
-          Giá
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-           Hình ảnh
-        </dt>
-
-        <dd>
-            <img src="@Url.Content(Model.ImagePro)" height="150" width="150" />
-        </dd>
-
-      
-
-   
-
+        <dt>Tên sản phẩm</dt>
+        <dd>@Html.DisplayFor(model => model.NamePro)</dd>
+        <dt>Chi tiết</dt>
+        <dd>@Html.DisplayFor(model => model.DecriptionPro)</dd>
+        <dt>Loại </dt>
+        <dd>@Html.DisplayFor(model => model.Category)</dd>
+        <dt>Giá</dt>
+        <dd>@Html.DisplayFor(model => model.Price)</dd>
+        <dt>Hình ảnh</dt>
+        <dd><img src="@Url.Content(Model.ImagePro)" height="150" width="150" /></dd>
     </dl>
 </div>
-
 <p>
   
     @Html.ActionLink("Quay về", "List","Product")

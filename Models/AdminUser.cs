@@ -40,14 +40,5 @@ namespace ToyStore.Models
         [NotMapped]
         public string ErrorLogin { get; set; }
 
-      
-
-
-
-
-
-
-
-
     }
 }

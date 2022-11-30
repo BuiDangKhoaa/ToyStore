@@ -10,52 +10,26 @@
     }
 </style>
 <h2>Danh sách sản phẩm</h2>
-
 <p>
     @Html.ActionLink("Tạo sản phẩm mới", "Create")
 </p>
 <table class="table table-bordered" style="border-width:thick">
     <tr style="white-space: nowrap">
-        <th>
-            Tên sản phẩm
-        </th>
-        <th>
-            Chi tiết
-        </th>
-        <th>
-            Loại sản phẩm
-        </th>
-        <th>
-            Giá
-        </th>
-        <th>
-            Hình ảnh
-        </th>
-
+        <th>Tên sản phẩm</th>
+        <th>Chi tiết</th>
+        <th>Loại sản phẩm</th>
+        <th>Giá</th>
+        <th>Hình ảnh</th>
         <th></th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NamePro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DecriptionPro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.ImagePro)*@
-                <img src="@Url.Content(item.ImagePro)" height="150" width="150" />
-
-            </td>
-
+            <td>@Html.DisplayFor(modelItem => item.NamePro)</td>
+            <td>@Html.DisplayFor(modelItem => item.DecriptionPro)</td>
+            <td>@Html.DisplayFor(modelItem => item.Category)</td>
+            <td>@Html.DisplayFor(modelItem => item.Price)</td>
+            <td><img src="@Url.Content(item.ImagePro)" height="150" width="150" /></td>
             <td>
                 @Html.ActionLink("Sửa", "Edit", new { id = item.ProductID }) |
                 @Html.ActionLink("Chi tiết", "Details", new { id = item.ProductID }) |
@@ -63,5 +37,4 @@
             </td>
         </tr>
     }
-
 </table>

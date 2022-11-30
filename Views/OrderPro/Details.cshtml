@@ -4,45 +4,20 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/Saler.cshtml";
 }
-
 <h2>Chi tiết</h2>
-
 <div>
-  
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-           Thời gian đặt
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DateOrder)
-        </dd>
-
-        <dt>
-            Mã KH
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IDCus)
-        </dd>
-
-        <dt>
-            Địa chỉ
-        </dt>
-
+        <dt> Thời gian đặt </dt>
+        <dd>  @Html.DisplayFor(model => model.DateOrder) </dd>
+        <dt>  Mã KH </dt>
+        <dd>@Html.DisplayFor(model => model.IDCus)</dd>
+        <dt>Địa chỉ</dt>
         <dd>
             @Html.DisplayFor(model => model.AddressDeliverry)
         </dd>
-
-        <dt>
-           Mã KH
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Customer.NameCus)
-        </dd>
-
+        <dt>Mã KH</dt>
+        <dd>@Html.DisplayFor(model => model.Customer.NameCus)</dd>
     </dl>
 </div>
 <p>

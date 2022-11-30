@@ -4,29 +4,18 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Saler.cshtml";
 }
-
 <h2>Danh sách đơn hàng</h2>
-
 <p>
     @Html.ActionLink("Khởi tạo đơn hàng mới", "Create")
 </p>
 <table class="table table-bordered ">
     <tr>
-        <th>
-            Thời gian
-        </th>
-        <th>
-           Mã KH
-        </th>
-        <th>
-           Địa chỉ
-        </th>
-        <th>
-        Tên KH
-        </th>
+        <th>Thời gian</th>
+        <th>Mã KH</th>
+        <th>Địa chỉ</th>
+        <th>Tên KH</th>
         <th></th>
     </tr>
-
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -48,5 +37,4 @@
         </td>
     </tr>
 }
-
 </table>

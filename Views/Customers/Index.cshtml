@@ -1,32 +1,20 @@
 ﻿@model IEnumerable<ToyStore.Models.Customer>
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Saler.cshtml";
 }
-
 <h2>Danh sách khách hàng</h2>
-
 <p>
     @Html.ActionLink("Tạo khách hàng mới", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>
-           <b>Mã khách hàng</b>
-        </th>
-        <th>
-            <b>Tên khách hàng</b>
-        </th>
-        <th>
-            <b>Số điện thoại</b>
-        </th>
-        <th>
-            <b>E-mail khách hàng</b>
-        </th>
+        <th><b>Mã khách hàng</b></th>
+        <th> <b>Tên khách hàng</b></th>
+        <th> <b>Số điện thoại</b></th>
+        <th> <b>E-mail khách hàng</b> </th>
         <th></th>
     </tr>
-
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -48,5 +36,4 @@
         </td>
     </tr>
 }
-
 </table>

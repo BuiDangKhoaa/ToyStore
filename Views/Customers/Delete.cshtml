@@ -4,48 +4,20 @@
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/Saler.cshtml";
 }
-
 <h2>Xóa khách hàng</h2>
-
 <h3>Bạn có chắc muốn xóa khách hàng này chứ ?</h3>
 <div>
-  
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-           Mã khách hàng
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IDCus)
-        </dd>
-
-        <dt>
-           Tên khách hàng
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NameCus)
-        </dd>
-
-        <dt>
-           Số điện thoại
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneCus)
-        </dd>
-
-        <dt>
-          E-mail khách hàng
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailCus)
-        </dd>
-
+        <dt> Mã khách hàng </dt>
+        <dd>@Html.DisplayFor(model => model.IDCus) </dd>    
+        <dt>Tên khách hàng</dt>
+        <dd>@Html.DisplayFor(model => model.NameCus)</dd>
+        <dt>Số điện thoại</dt>
+        <dd> @Html.DisplayFor(model => model.PhoneCus)</dd>
+        <dt>E-mail khách hàng </dt>
+        <dd> @Html.DisplayFor(model => model.EmailCus) </dd>
     </dl>
-
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 

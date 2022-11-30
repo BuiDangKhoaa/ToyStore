@@ -16,45 +16,33 @@
             width: 100%;
             text-align: center;
         }
-
         li.format-hello {
             padding-top: 15px;
             color: crimson;
-        }
-        /*#animation-top5:hover {
-            color: white;
-            text-shadow: 1px 1px 2px gray, 0 0 25px red, 0 0 5px red;
-            height: 10px;
-        }*/
+        }    
         .search {
             text-align: center;
         }
-
         .navbar-inverse .navbar-brand {
             color: crimson;
             font-size: 40px;
             font-family: ui-monospace;
         }
-
         .navbar-inverse .navbar-nav > li > a {
             color: crimson;
             font-size: 15px;
         }
-
         input, select, textarea {
             max-width: 500px;
         }
-
         .navbar-inverse .navbar-brand {
             color: crimson;
             font-size: 30px;
             font-family: ui-monospace;
         }
-
         aa.navbar-brand {
             padding-top: 10px;
         }
-
         img.header_logo.header-logo {
             left: 13%;
             position: absolute;
@@ -117,17 +105,12 @@
                         <input type="text" name="_name" style="width:1000px" />
                         <input type="submit" value="Tìm kiếm" />
                     }
-
-
                 </div>
                 @{Html.RenderAction("CategoryPartial", "Categories"); }
 
             </div>
 
         </div>
-     
-         
-     
         <div class="container-fluid body-content" style="padding-top:50px">
             <div style="text-align:center;">
 
@@ -140,17 +123,12 @@
         <br />
         <footer>
             <div class="navbar navbar-inverse navbar-fixed-bottom" style="background-color: antiquewhite; text-align:center;border-radius:10px;padding-top:10px">
-                @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
-                <p>Bùi Đăng Khoa_21DH113768</p>
-                @*<p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>
-                    <p>Thông tin liên hệ: 0123456789 </p>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>             
+                @*<p>Địa chỉ: Trường Đại học Ngoại Ngữ Tin Học tp HCM</p>*@
+                    @*<p>Thông tin liên hệ: 0123456789 </p>
                     <p>Địa chỉ email: Huflit@st.edu.vn</p>*@
             </div>
         </footer>
-
-
-
-
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)

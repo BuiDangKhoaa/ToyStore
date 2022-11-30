@@ -1,5 +1,4 @@
 ﻿@model ToyStore.Models.Product
-
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/Saler.cshtml";
@@ -21,7 +20,6 @@
                 <td>Giá</td>
                 <td>@Html.EditorFor(model => model.Price)</td>
             </tr>
-
             <tr>
                 <td>Loại sản phẩm</td>
                 <td>
@@ -30,8 +28,6 @@
                     @Html.DropDownListFor(model => model.Category, (SelectList)ViewBag.listCategory)
                 </td>
             </tr>
-
-           
             <tr>
                 <td>Chi tiết </td>
                 <td>@Html.EditorFor(model => model.DecriptionPro)</td>
@@ -50,6 +46,9 @@
             </tr>
         </table>
     }
+    <div>
+        @Html.ActionLink("Quay lại", "List", "Product")
+    </div>
 
 </div>
 

@@ -72,8 +72,5 @@ namespace ToyStore.Controllers
                 return Content("This data is using in other table, Error Delete!");
             }
         }
-
-
-
     }
 }

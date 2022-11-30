@@ -4,7 +4,6 @@
     ViewBag.Title = "FormLogin";
     Layout = "~/Views/Shared/User.cshtml";
 }
-
 <style>
     .field-validation-errror {
         color: red;
@@ -18,7 +17,6 @@
 </style>
 <h2>Đăng Nhập</h2>
 <div style="margin-left:40%">
-
     @using (Html.BeginForm("LoginAcount", "LoginUser"))
     {
         @Html.AntiForgeryToken()
@@ -38,9 +36,7 @@
                     {
                         <p>@ViewBag.ErrorInfo</p>
                     }
-
                 </tr>
-
                 <tr>
                     <td></td>
                     <td> <input type="submit" value="Đăng nhập" /></td>

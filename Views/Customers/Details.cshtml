@@ -1,51 +1,22 @@
 ﻿@model ToyStore.Models.Customer
-
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/Saler.cshtml";
 }
-
 <h2>Chi tiết khách hàng</h2>
-
 <div>
-
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            Mã khách hàng
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IDCus)
-        </dd>
-
-        <dt>
-            Tên khách hàng
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NameCus)
-        </dd>
-
-        <dt>
-            Số điện thoại
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneCus)
-        </dd>
-
-        <dt>
-            E-mail khách hàng
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailCus)
-        </dd>
-
+        <dt> Mã khách hàng</dt>
+        <dd>@Html.DisplayFor(model => model.IDCus) </dd>
+        <dt>Tên khách hàng</dt>
+        <dd>@Html.DisplayFor(model => model.NameCus)</dd>
+        <dt>Số điện thoại</dt>
+        <dd> @Html.DisplayFor(model => model.PhoneCus)</dd>
+        <dt>   E-mail khách hàng</dt>
+        <dd>@Html.DisplayFor(model => model.EmailCus)</dd>
     </dl>
 </div>
 <p>
-    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
     @Html.ActionLink("Quay về", "Index")
 </p>

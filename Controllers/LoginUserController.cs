@@ -64,6 +64,5 @@ namespace ToyStore.Controllers
             Session.Abandon();
             return RedirectToAction("FormLogin", "LoginUser");
         }
-
     }
 }

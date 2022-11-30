@@ -141,7 +141,6 @@ namespace ToyStore.Controllers
 
         public ActionResult TopNew()
         {
-
             List<Product> proList = db.Products.ToList();
             var query = from od in proList
                         join p in proList on od.ProductID equals p.ProductID into tbl
@@ -161,13 +160,8 @@ namespace ToyStore.Controllers
                             pricePro = (decimal)gr.Key.price,
                             Top5_New = gr.Max(s => s.ProductID)
                         };
-            return PartialView(query.Take(5).ToList());
-
+            return PartialView(query.Take(4).ToList());
         }
-     
-
-
-
     }
 
 }
